@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="講義と実装デモの2名体制。参加者がいま困っている業務を、その場で生成AIに解かせて見せる法人向けAI研修。3時間・1社20万円（税別）、公開講座は1万円。">
+<meta name="theme-color" content="#123A6B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="その場で動かすAI研修｜法人向け">
+<meta property="og:description" content="事例紹介では現場は動きません。講義のとなりで、御社の業務をその場でAIに解かせます。3時間・1社20万円（税別）。">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23123A6B'/%3E%3Ctext x='32' y='45' font-size='34' font-family='sans-serif' font-weight='bold' fill='%23EE7B1E' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<style>html{color-scheme:light}img{max-width:100%}</style>
+<title>その場で動かすAI研修</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Barlow+Condensed:wght@500;600;700&display=swap">
+
+<style>
+:root{
+  --navy:#123A6B;
+  --navy-d:#0C2A4F;
+  --navy-l:#1B4C86;
+  --orange:#EE7B1E;
+  --orange-d:#D96A0F;
+  --sky:#3FA9C9;
+  --paper:#FFFFFF;
+  --grey:#EEF1F5;
+  --grey-2:#DCE2EA;
+  --text:#16202B;
+  --text-sub:#5A6773;
+  --jp:"Noto Sans JP","Hiragino Sans",sans-serif;
+  --num:"Barlow Condensed","Noto Sans JP",sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;padding-bottom:84px;
+  background:var(--paper);
+  color:var(--text);
+  font-family:var(--jp);
+  font-size:15px;line-height:1.95;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* ===== header ===== */
+.hd{
+  position:sticky;top:0;z-index:40;background:var(--paper);
+  border-bottom:1px solid var(--grey-2);
+}
+.hd-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;max-width:960px;margin:0 auto}
+.logo{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.logo b{font-weight:900;font-size:19px;letter-spacing:-.01em}
+.logo .badge{
+  background:var(--sky);color:#fff;font-size:11px;font-weight:700;
+  padding:2px 8px;border-radius:3px;letter-spacing:.04em;
+}
+.logo small{display:block;width:100%;font-size:11.5px;font-weight:700;color:var(--text-sub);margin-top:-2px}
+.hd-cta{
+  background:var(--orange);color:#fff;font-weight:700;font-size:13px;
+  padding:9px 16px;border-radius:4px;white-space:nowrap;
+}
+
+/* ===== hero ===== */
+.hero{background:linear-gradient(160deg,#16447C 0%,var(--navy) 45%,var(--navy-d) 100%);color:#fff;padding:38px 0 44px;position:relative;overflow:hidden}
+.hero::after{
+  content:"";position:absolute;right:-80px;top:-80px;width:300px;height:300px;
+  background:radial-gradient(circle,rgba(63,169,201,.35),transparent 65%);pointer-events:none;
+}
+.hero-in{position:relative}
+.hero h1{
+  font-weight:900;font-size:clamp(28px,7.4vw,46px);line-height:1.42;
+  letter-spacing:-.01em;margin:0 0 18px;text-wrap:balance;
+}
+.hero h1 .hl{
+  background:var(--sky);padding:2px 10px;margin:0 2px;
+  display:inline-block;border-radius:2px;
+}
+.hero p.sub{font-size:15.5px;line-height:1.9;margin:0 0 26px;color:#D6E3F1;max-width:44em}
+
+.circles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 24px}
+.circle{
+  aspect-ratio:1;border-radius:50%;background:#fff;color:var(--navy);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.22);
+}
+.circle .t{font-size:11.5px;font-weight:700;line-height:1.5}
+.circle .b{font-weight:900;font-size:clamp(15px,4.4vw,21px);line-height:1.25;color:var(--navy);letter-spacing:-.02em}
+.circle .b em{font-style:normal;font-family:var(--num);font-size:1.5em;color:var(--orange);font-weight:700;letter-spacing:0}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.tags .lead{width:100%;text-align:center;font-weight:700;font-size:14px;color:#fff;margin-bottom:2px}
+.tag{background:#fff;color:var(--navy);font-weight:700;font-size:14px;padding:7px 14px;border-radius:3px}
+
+/* ===== numbers band ===== */
+.band{background:var(--grey);padding:22px 0}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--grey-2);border:1px solid var(--grey-2)}
+.num{background:var(--paper);padding:14px 8px;text-align:center}
+.num dt{font-size:11.5px;font-weight:700;color:var(--text-sub);margin:0 0 2px}
+.num dd{margin:0;font-family:var(--num);font-weight:700;font-size:30px;line-height:1.1;color:var(--navy);font-variant-numeric:tabular-nums}
+.num dd small{font-family:var(--jp);font-size:12px;font-weight:700;margin-left:3px}
+
+/* ===== section basics ===== */
+.sec{padding:52px 0}
+.sec-dark{background:var(--navy);color:#fff}
+.sec-grey{background:var(--grey)}
+.eyebrow{
+  display:block;text-align:center;font-family:var(--num);font-weight:600;
+  letter-spacing:.24em;font-size:14px;color:var(--orange);margin:0 0 6px;
+}
+.sec h2{
+  font-weight:900;font-size:clamp(22px,5.6vw,32px);line-height:1.5;
+  text-align:center;margin:0 0 10px;letter-spacing:-.01em;text-wrap:balance;
+}
+.sec h2 .u{
+  background:linear-gradient(transparent 62%,rgba(238,123,30,.42) 62%);
+  padding:0 2px;
+}
+.sec-dark h2 .u{background:linear-gradient(transparent 62%,rgba(63,169,201,.55) 62%)}
+.sec .lede{text-align:center;color:var(--text-sub);margin:0 auto 32px;max-width:38em;font-size:14.5px}
+.sec-dark .lede{color:#C3D4E7}
+
+/* ===== 課題 cards ===== */
+.issue{margin-bottom:30px}
+.issue:last-child{margin-bottom:0}
+.issue-no{
+  display:block;width:fit-content;margin:0 auto -1px;position:relative;z-index:2;
+  background:#0A2445;color:#fff;font-weight:700;font-size:13px;letter-spacing:.1em;
+  padding:5px 20px;border-radius:3px 3px 0 0;
+}
+.issue-no i{font-style:normal;font-family:var(--num);font-size:17px;font-weight:700;margin-left:6px;letter-spacing:.02em}
+.issue-card{
+  background:var(--grey);color:var(--text);border-radius:8px;
+  padding:24px 20px 22px;text-align:center;position:relative;
+}
+.issue-card h3{font-weight:900;color:var(--navy);font-size:clamp(19px,4.8vw,25px);line-height:1.5;margin:0 0 8px;text-wrap:balance}
+.issue-card p{margin:0;color:#46535F;font-size:14px;line-height:1.8}
+.issue-card::after{
+  content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-15px;
+  border-left:17px solid transparent;border-right:17px solid transparent;
+  border-top:16px solid var(--grey);
+}
+.issue-vis{
+  margin-top:30px;background:#0E3260;border:1px solid rgba(255,255,255,.14);
+  border-radius:8px;padding:20px;
+}
+.vis-line{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;
+  padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.16);font-size:14px;
+}
+.vis-line:last-child{border-bottom:0}
+.vis-line b{font-weight:500;color:#D6E3F1}
+.vis-line .x{
+  font-family:var(--num);font-weight:700;font-size:15px;letter-spacing:.06em;
+  color:#FF8B8B;white-space:nowrap;
+}
+.vis-line .x.ok{color:#7BE0A8}
+.vis-cap{margin:14px 0 0;font-size:12.5px;color:#9FB6CE;line-height:1.7}
+
+/* ===== 二人体制 ===== */
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.role{border:2px solid var(--navy);border-radius:8px;overflow:hidden;background:#fff}
+.role-hd{background:var(--navy);color:#fff;padding:12px 16px}
+.role-hd .k{display:block;font-family:var(--num);font-size:13px;letter-spacing:.2em;color:#8FC6DC}
+.role-hd b{font-weight:900;font-size:19px}
+.role-bd{padding:18px 16px 20px}
+.role-bd p{margin:0 0 14px;font-size:14px;color:var(--text-sub)}
+.role-bd ul{margin:0;padding:0;list-style:none}
+.role-bd li{
+  position:relative;padding-left:24px;font-size:14px;font-weight:500;margin-bottom:9px;line-height:1.7;
+}
+.role-bd li::before{
+  content:"";position:absolute;left:2px;top:.55em;width:13px;height:7px;
+  border-left:3px solid var(--orange);border-bottom:3px solid var(--orange);
+  transform:rotate(-45deg);
+}
+
+/* ===== timetable ===== */
+.tt{background:#fff;border:1px solid var(--grey-2);border-radius:8px;overflow:hidden}
+.tt-row{display:grid;grid-template-columns:82px minmax(0,1fr);gap:14px;padding:14px 16px;border-bottom:1px solid var(--grey-2);align-items:baseline}
+.tt-row:last-child{border-bottom:0}
+.tt-time{font-family:var(--num);font-weight:700;font-size:20px;color:var(--navy);font-variant-numeric:tabular-nums;letter-spacing:.03em}
+.tt-body b{display:block;font-weight:700;font-size:15.5px;line-height:1.6;margin-bottom:2px}
+.tt-body span{color:var(--text-sub);font-size:13.5px;line-height:1.75;display:block}
+.tt-row.is-demo{background:#FFF4E8}
+.tt-row.is-demo .tt-time{color:var(--orange-d)}
+.pill{
+  display:inline-block;background:var(--orange);color:#fff;font-size:11px;font-weight:700;
+  letter-spacing:.08em;padding:2px 8px;border-radius:3px;margin-left:8px;vertical-align:2px;
+}
+.tt-row.is-break{background:#F7F9FB}
+.tt-row.is-break .tt-body b{font-weight:500;color:var(--text-sub)}
+
+/* ===== compare ===== */
+.cmp{width:100%;border-collapse:collapse;background:#fff;font-size:14px}
+.cmp-scroll{overflow-x:auto;border:1px solid var(--grey-2);border-radius:8px}
+.cmp th,.cmp td{padding:13px 12px;border-bottom:1px solid var(--grey-2);text-align:center;vertical-align:middle}
+.cmp thead th{background:var(--grey);font-weight:700;font-size:13px;color:var(--text-sub);white-space:nowrap}
+.cmp thead th.mine{background:var(--navy);color:#fff;font-size:14px}
+.cmp tbody th{text-align:left;font-weight:700;background:#F7F9FB;white-space:nowrap;font-size:13.5px}
+.cmp td.mine{background:#F1F7FB;font-weight:700;color:var(--navy)}
+.cmp .mk{font-family:var(--num);font-size:20px;font-weight:700;display:block;line-height:1}
+.cmp .mk.no{color:#C4CDD6}
+.cmp .mk.yes{color:var(--orange)}
+.cmp small{display:block;font-size:12px;font-weight:400;color:var(--text-sub);line-height:1.6}
+.cmp td.mine small{color:#3C5A78}
+
+/* ===== plans ===== */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.plan{background:#fff;border:1px solid var(--grey-2);border-radius:8px;overflow:hidden}
+.plan.is-lead{border:3px solid var(--orange);box-shadow:0 10px 30px rgba(18,58,107,.12)}
+.plan-hd{padding:14px 18px;background:var(--grey);text-align:center}
+.plan.is-lead .plan-hd{background:var(--orange);color:#fff}
+.plan-hd .k{display:block;font-family:var(--num);letter-spacing:.18em;font-size:12.5px;font-weight:600;opacity:.9}
+.plan-hd b{font-weight:900;font-size:20px}
+.plan-bd{padding:20px 18px 22px}
+.price{display:flex;align-items:baseline;justify-content:center;gap:6px;margin-bottom:2px}
+.price .n{font-family:var(--num);font-weight:700;font-size:48px;line-height:1;color:var(--navy);font-variant-numeric:tabular-nums}
+.plan.is-lead .price .n{color:var(--orange-d)}
+.price .u{font-weight:700;font-size:15px}
+.price-note{text-align:center;color:var(--text-sub);font-size:12.5px;margin:0 0 18px}
+.plan ul{margin:0 0 18px;padding:0;list-style:none;border-top:1px solid var(--grey-2)}
+.plan li{display:grid;grid-template-columns:4.6em minmax(0,1fr);gap:10px;padding:9px 0;border-bottom:1px solid var(--grey-2);font-size:13.5px;line-height:1.7}
+.plan li i{font-style:normal;color:var(--text-sub);font-size:12.5px;font-weight:700}
+.btn{
+  display:block;text-align:center;padding:14px;border-radius:5px;
+  font-weight:700;font-size:15px;transition:transform .15s ease,background .15s ease;
+}
+.btn-o{background:var(--orange);color:#fff}
+.btn-o:hover{background:var(--orange-d);transform:translateY(-1px)}
+.btn-w{background:#fff;color:var(--orange-d);border:2px solid var(--orange)}
+.btn-w:hover{background:#FFF4E8}
+.btn:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+
+/* ===== prep ===== */
+.prep{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.prep div{background:#fff;border:1px solid var(--grey-2);border-radius:8px;padding:18px 16px;text-align:center}
+.prep .n{
+  display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+  border-radius:50%;background:var(--navy);color:#fff;font-family:var(--num);
+  font-weight:700;font-size:19px;margin-bottom:8px;
+}
+.prep b{display:block;font-weight:900;font-size:15.5px;color:var(--navy);margin-bottom:4px;line-height:1.6}
+.prep span{color:var(--text-sub);font-size:13px;line-height:1.75}
+
+/* ===== people ===== */
+.people{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.person{background:#fff;border:1px solid var(--grey-2);border-radius:8px;padding:20px 18px}
+.person .k{font-family:var(--num);letter-spacing:.18em;font-size:12.5px;font-weight:600;color:var(--orange);display:block}
+.person .who{font-weight:900;font-size:23px;margin:2px 0 10px}
+.person p{margin:0;color:var(--text-sub);font-size:13.5px;line-height:1.85}
+
+/* ===== faq ===== */
+.faq{max-width:720px;margin:0 auto}
+.faq details{background:#fff;border:1px solid var(--grey-2);border-radius:6px;margin-bottom:10px}
+.faq summary{
+  cursor:pointer;list-style:none;padding:15px 44px 15px 44px;position:relative;
+  font-weight:700;font-size:15px;line-height:1.7;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{
+  content:"Q";position:absolute;left:16px;top:14px;font-family:var(--num);
+  font-size:19px;font-weight:700;color:var(--navy);
+}
+.faq summary::after{content:"＋";position:absolute;right:16px;top:14px;color:var(--orange);font-weight:700}
+.faq details[open] summary::after{content:"－"}
+.faq summary:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.faq .a{
+  padding:0 18px 18px 44px;position:relative;color:var(--text-sub);
+  font-size:14px;line-height:1.85;margin:0;
+}
+.faq .a::before{
+  content:"A";position:absolute;left:16px;top:0;font-family:var(--num);
+  font-size:19px;font-weight:700;color:var(--orange);
+}
+
+/* ===== closing ===== */
+.close{background:linear-gradient(160deg,#16447C,var(--navy-d));color:#fff;padding:52px 0 56px;text-align:center}
+.close h2{color:#fff}
+.close p{color:#C3D4E7;max-width:34em;margin:0 auto 26px;font-size:14.5px}
+.close-btns{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:520px;margin:0 auto}
+.foot{background:#0A2445;color:#8AA3BD;font-size:12px;text-align:center;padding:20px}
+
+/* ===== sticky bottom ===== */
+.sticky{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:rgba(10,36,69,.96);padding:10px 14px;
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  box-shadow:0 -4px 18px rgba(0,0,0,.25);
+}
+.sticky .btn{padding:13px 8px;font-size:14.5px}
+
+@media (max-width:720px){
+  .sec{padding:42px 0}
+  .nums{grid-template-columns:1fr 1fr}
+  .roles,.plans,.people,.close-btns{grid-template-columns:1fr}
+  .prep{grid-template-columns:1fr}
+  .tt-row{grid-template-columns:66px minmax(0,1fr);gap:10px;padding:13px 12px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="hd">
+  <div class="hd-in">
+    <div class="logo">
+      <b>その場で動かすAI研修</b><span class="badge">実装デモ付き</span>
+      <small>法人向けサービス</small>
+    </div>
+    <a class="hd-cta" href="#contact">無料相談</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <h1>研修のとなりで、<br><span class="hl">御社の業務</span>を<br>その場でAIに解かせる。</h1>
+    <p class="sub">事例紹介では、現場は動きません。講義と並行して、参加者がいま困っている業務をその場で聞き取り、生成AIで作って画面に出します。持ち帰るのは知識ではなく、月曜から使えるプロンプトと手順です。</p>
+
+    <div class="circles">
+      <div class="circle"><span class="t">講義と実装の</span><span class="b">2名体制</span></div>
+      <div class="circle"><span class="t">参加者の業務を</span><span class="b">その場で<br>実装</span></div>
+      <div class="circle"><span class="t">1社貸切</span><span class="b"><em>20</em>万円</span></div>
+    </div>
+
+    <div class="tags">
+      <span class="lead">研修当日にできること</span>
+      <span class="tag">業務の切り出し</span>
+      <span class="tag">実装デモ2本</span>
+      <span class="tag">自分の業務でハンズオン</span>
+      <span class="tag">プロンプト集を納品</span>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <dl class="nums">
+      <div class="num"><dt>所要時間</dt><dd>3<small>時間</small></dd></div>
+      <div class="num"><dt>推奨人数</dt><dd>5–20<small>名</small></dd></div>
+      <div class="num"><dt>1社貸切</dt><dd>20<small>万円/税別</small></dd></div>
+      <div class="num"><dt>最短実施</dt><dd>2<small>週間後</small></dd></div>
+    </dl>
+  </div>
+</div>
+
+<section class="sec sec-dark">
+  <div class="wrap">
+    <span class="eyebrow">ISSUE</span>
+    <h2>AI研修を入れたのに、<br><span class="u">翌週には誰も使っていない</span></h2>
+    <p class="lede">ご相談でよく伺う、3つのつまずきです。</p>
+
+    <div class="issue">
+      <span class="issue-no">課題<i>01</i></span>
+      <div class="issue-card">
+        <h3>動画を配ったが、<br>誰も見ていない</h3>
+        <p>アカウントを配って終わり。学びが業務に接続されないまま放置される。</p>
+      </div>
+    </div>
+
+    <div class="issue">
+      <span class="issue-no">課題<i>02</i></span>
+      <div class="issue-card">
+        <h3>事例紹介で終わり、<br>自分の仕事に戻せない</h3>
+        <p>他社の成功例は「便利そう」で止まる。経理と営業に同じ演習を出しても自分ごとにならない。</p>
+      </div>
+    </div>
+
+    <div class="issue">
+      <span class="issue-no">課題<i>03</i></span>
+      <div class="issue-card">
+        <h3>講師が、目の前で<br>一度も作ってみせない</h3>
+        <p>スライドの中のAIは動くのに、実演がない。だから詰まったときの直し方が残らない。</p>
+      </div>
+      <div class="issue-vis">
+        <div class="vis-line"><b>動画・eラーニングを配布</b><span class="x">見て終わる</span></div>
+        <div class="vis-line"><b>他社事例の紹介</b><span class="x">自社に戻せない</span></div>
+        <div class="vis-line"><b>全員に同じ演習</b><span class="x">自分ごとにならない</span></div>
+        <div class="vis-line"><b>参加者の業務をその場で実装</b><span class="x ok">翌日から使える</span></div>
+        <p class="vis-cap">この研修は、いちばん下の1行だけをやります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">SOLUTION</span>
+    <h2>話す人と、<span class="u">作る人</span>を分ける。</h2>
+    <p class="lede">2名体制だから、講義が止まらず、実装も雑になりません。</p>
+    <div class="roles">
+      <div class="role">
+        <div class="role-hd"><span class="k">LECTURE</span><b>講義 — あい</b></div>
+        <div class="role-bd">
+          <p>AIをどう捉え、どこから社内に入れるか。事例ではなく判断軸を渡します。</p>
+          <ul>
+            <li>いまのAIができること／できないこと</li>
+            <li>業務を「AIに渡せる形」に分解する手順</li>
+            <li>社内展開の順番と、止まりやすい場所</li>
+          </ul>
+        </div>
+      </div>
+      <div class="role">
+        <div class="role-hd"><span class="k">LIVE BUILD</span><b>実装デモ — つっちー</b></div>
+        <div class="role-bd">
+          <p>その場で参加者の業務を聞き取り、生成AIで作って画面共有します。失敗と直す過程ごと見せます。</p>
+          <ul>
+            <li>参加者の実務から題材を1〜2本その場で選定</li>
+            <li>プロンプト・簡易ツールをゼロから作成</li>
+            <li>当日の作成物と録画をそのまま納品</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-grey">
+  <div class="wrap">
+    <span class="eyebrow">TIMETABLE</span>
+    <h2>3時間の流れ</h2>
+    <p class="lede">実装デモを2回はさみます。ハンズオンは、デモを見たあとに自分の業務で。</p>
+    <div class="tt">
+      <div class="tt-row"><span class="tt-time">0:00</span><span class="tt-body"><b>いま何ができて、何ができないか</b><span>誇張も過小評価もなしで現在地をそろえる</span></span></div>
+      <div class="tt-row"><span class="tt-time">0:20</span><span class="tt-body"><b>自社の業務を「渡せる形」に割る</b><span>手元の業務を、指示できる単位まで分解する</span></span></div>
+      <div class="tt-row is-demo"><span class="tt-time">0:50</span><span class="tt-body"><b>参加者の業務を1本、その場で作る<span class="pill">実装デモ</span></b><span>題材を挙手で決め、ゼロから完成まで画面共有</span></span></div>
+      <div class="tt-row is-break"><span class="tt-time">1:30</span><span class="tt-body"><b>休憩</b><span>10分</span></span></div>
+      <div class="tt-row"><span class="tt-time">1:40</span><span class="tt-body"><b>ハンズオン：自分の業務で書く</b><span>詰まった方には個別に入ります</span></span></div>
+      <div class="tt-row is-demo"><span class="tt-time">2:20</span><span class="tt-body"><b>2本目 ／ 質疑<span class="pill">実装デモ</span></b><span>ハンズオンで出た「できなかった」をその場で解く</span></span></div>
+      <div class="tt-row"><span class="tt-time">2:50</span><span class="tt-body"><b>持ち帰りシートと、社内展開の順番</b><span>来週やること・再来月やることを決めて終わる</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">COMPARE</span>
+    <h2>一般的なAI研修との<span class="u">ちがい</span></h2>
+    <div class="cmp-scroll">
+      <table class="cmp">
+        <thead>
+          <tr><th></th><th>一般的なAI研修</th><th class="mine">この研修</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>題材</th>
+            <td><span class="mk no">×</span><small>他社事例・共通課題</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>参加者が当日出す実務</small></td>
+          </tr>
+          <tr>
+            <th>実演</th>
+            <td><span class="mk no">×</span><small>スライドの中だけ</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>画面共有でゼロから作る</small></td>
+          </tr>
+          <tr>
+            <th>体制</th>
+            <td><span class="mk no">–</span><small>講師1名</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>講義＋実装の2名</small></td>
+          </tr>
+          <tr>
+            <th>持ち帰り</th>
+            <td><span class="mk no">–</span><small>資料PDF</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>当日の作成物・プロンプト集・録画</small></td>
+          </tr>
+          <tr>
+            <th>準備期間</th>
+            <td><span class="mk no">–</span><small>1〜数か月</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>最短2週間</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-grey" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">PRICE</span>
+    <h2>2つの受け方</h2>
+    <p class="lede">自社の業務を題材にするなら貸切、まず一人で試すなら公開講座を。</p>
+    <div class="plans">
+      <div class="plan is-lead">
+        <div class="plan-hd"><span class="k">PLAN A ／ 1社貸切</span><b>企業研修</b></div>
+        <div class="plan-bd">
+          <div class="price"><span class="n">200,000</span><span class="u">円/税別</span></div>
+          <p class="price-note">1社あたり・3時間・人数によらず定額</p>
+          <ul>
+            <li><i>形式</i><span>オンライン／訪問（交通費実費）</span></li>
+            <li><i>人数</i><span>5〜20名（超過は要相談）</span></li>
+            <li><i>事前</i><span>ヒアリング30分×1回・題材のすり合わせ</span></li>
+            <li><i>納品</i><span>当日の作成物・プロンプト集・録画</span></li>
+            <li><i>支払</i><span>請求書払い（月末締め／翌月末）</span></li>
+          </ul>
+          <a class="btn btn-o" href="#contact">日程を相談する</a>
+        </div>
+      </div>
+      <div class="plan">
+        <div class="plan-hd"><span class="k">PLAN B ／ 個人参加</span><b>公開講座</b></div>
+        <div class="plan-bd">
+          <div class="price"><span class="n">10,000</span><span class="u">円/税込</span></div>
+          <p class="price-note">お一人あたり・定員30名</p>
+          <ul>
+            <li><i>形式</i><span>オンライン</span></li>
+            <li><i>人数</i><span>定員30名</span></li>
+            <li><i>題材</i><span>参加者から当日募集</span></li>
+            <li><i>納品</i><span>プロンプト集・録画（2週間視聴）</span></li>
+            <li><i>支払</i><span>事前決済</span></li>
+          </ul>
+          <a class="btn btn-w" href="#contact">開催日の連絡を受け取る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">PREPARE</span>
+    <h2>当日までに<span class="u">用意するもの</span></h2>
+    <p class="lede">3つだけ。インストール作業も事前学習もありません。</p>
+    <div class="prep">
+      <div><span class="n">1</span><b>PC</b><span>視聴だけならスマホでも可。ハンズオンはPC推奨です。</span></div>
+      <div><span class="n">2</span><b>ChatGPT または Claude の無料アカウント</b><span>有料プランは不要。無料枠の範囲で作り方を見せます。</span></div>
+      <div><span class="n">3</span><b>困っている業務を1つ</b><span>「毎週やっていて面倒なこと」で十分。うまく言えなくても当日ほぐします。</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-grey">
+  <div class="wrap">
+    <span class="eyebrow">SPEAKERS</span>
+    <h2>登壇する二人</h2>
+    <div class="people">
+      <div class="person">
+        <span class="k">LECTURE</span>
+        <p class="who">あい</p>
+        <p>講義パート担当。AIの捉え方と、業務・組織への当て方を扱います。</p>
+      </div>
+      <div class="person">
+        <span class="k">LIVE BUILD</span>
+        <p class="who">つっちー</p>
+        <p>実装デモ担当。長野県川上村で地域おこし協力隊として活動しながら、生成AIで業務ツールやWebサービスを実装しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">FAQ</span>
+    <h2>よくあるご質問</h2>
+    <div class="faq">
+      <details open>
+        <summary>社内にAIに詳しい人が一人もいませんが、大丈夫ですか。</summary>
+        <p class="a">その前提で設計しています。用語の説明から始め、当日はアカウント作成の画面から一緒に進みます。詳しい方が混ざっている場合は、その方には別題材をお渡しします。</p>
+      </details>
+      <details>
+        <summary>社内の情報をAIに入力しても問題ありませんか。</summary>
+        <p class="a">研修中は実データを使いません。業務の「構造」だけを扱い、数字や個人名はダミーに置き換えて進めます。社内ルールがある場合は、事前ヒアリングで内容を合わせます。</p>
+      </details>
+      <details>
+        <summary>オンラインでも、実装している手元は見えますか。</summary>
+        <p class="a">画面共有でそのまま映します。打ち間違いや、AIが的外れな答えを返したときの直し方まで見えるのが、この形式の要点です。録画もお渡しします。</p>
+      </details>
+      <details>
+        <summary>何名から依頼できますか。開催までどのくらいかかりますか。</summary>
+        <p class="a">5名から承ります。日程が合えば、ご相談から最短2週間で実施できます。事前ヒアリング30分を1回いただきます。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="contact">
+  <div class="wrap">
+    <h2>まず、御社の<br><span class="u">「面倒な業務」</span>を一つ聞かせてください。</h2>
+    <p>30分の無料相談で、その業務がAIで解けるかどうかをその場でお答えします。解けない場合は、そう申し上げます。</p>
+    <div class="close-btns">
+      <a class="btn btn-o" href="#contact">無料相談を申し込む</a>
+      <a class="btn btn-w" href="#plan">料金をもう一度見る</a>
+    </div>
+  </div>
+</section>
+
+<p class="foot">その場で動かすAI研修 ／ 法人向けサービス</p>
+
+<nav class="sticky">
+  <a class="btn btn-w" href="#plan">料金を見る</a>
+  <a class="btn btn-o" href="#contact">無料相談</a>
+</nav>
+</body>
+</html>
