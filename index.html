@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="講義と実装デモの2名体制。参加者がいま困っている業務を、その場で生成AIに解かせて見せる法人向けAI研修。3時間・1社20万円（税別）、公開講座は1万円。">
+<meta name="description" content="講義と実装デモの2名体制。研修で終わらせず、当日出た業務から御社専用ツールを1本仕上げて納品します。3時間・1社50万円（税別）、30日間サポート付き。">
 <meta name="theme-color" content="#123A6B">
 <meta property="og:type" content="website">
 <meta property="og:title" content="その場で動かすAI研修｜法人向け">
-<meta property="og:description" content="事例紹介では現場は動きません。講義のとなりで、御社の業務をその場でAIに解かせます。3時間・1社20万円（税別）。">
+<meta property="og:description" content="研修で終わらせない。動くツールが1本、残る。1社50万円（税別）／専用ツール1本納品＋30日間サポート。">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23123A6B'/%3E%3Ctext x='32' y='45' font-size='34' font-family='sans-serif' font-weight='bold' fill='%23EE7B1E' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
 <style>html{color-scheme:light}img{max-width:100%}</style>
@@ -245,6 +245,30 @@ a{color:inherit;text-decoration:none}
 .prep b{display:block;font-weight:900;font-size:15.5px;color:var(--navy);margin-bottom:4px;line-height:1.6}
 .prep span{color:var(--text-sub);font-size:13px;line-height:1.75}
 
+/* ===== deliverables ===== */
+.deliv{background:#fff;border:1px solid var(--grey-2);border-radius:8px;overflow:hidden}
+.deliv-row{
+  display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:16px;align-items:center;
+  padding:16px 18px;border-bottom:1px solid var(--grey-2);
+}
+.deliv-row:last-child{border-bottom:0}
+.deliv-row.is-core{background:#FFF4E8}
+.deliv-n{
+  display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
+  background:var(--navy);color:#fff;font-family:var(--num);font-weight:700;font-size:18px;
+}
+.deliv-row.is-core .deliv-n{background:var(--orange)}
+.deliv-t b{display:block;font-weight:700;font-size:15.5px;line-height:1.6}
+.deliv-t span{display:block;color:var(--text-sub);font-size:13.5px;line-height:1.75}
+.deliv-q{
+  font-family:var(--num);font-weight:600;font-size:14px;color:var(--navy);
+  white-space:nowrap;background:var(--grey);padding:4px 10px;border-radius:3px;
+}
+.deliv-row.is-core .deliv-q{background:var(--orange);color:#fff}
+.deliv-foot{
+  margin:14px 0 0;text-align:center;font-weight:700;font-size:15px;color:var(--navy);
+}
+
 /* ===== people ===== */
 .people{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .person{background:#fff;border:1px solid var(--grey-2);border-radius:8px;padding:20px 18px}
@@ -306,7 +330,7 @@ a{color:inherit;text-decoration:none}
 <header class="hd">
   <div class="hd-in">
     <div class="logo">
-      <b>その場で動かすAI研修</b><span class="badge">実装デモ付き</span>
+      <b>その場で動かすAI研修</b><span class="badge">ツール納品付き</span>
       <small>法人向けサービス</small>
     </div>
     <a class="hd-cta" href="#contact">無料相談</a>
@@ -315,21 +339,21 @@ a{color:inherit;text-decoration:none}
 
 <section class="hero">
   <div class="wrap hero-in">
-    <h1>研修のとなりで、<br><span class="hl">御社の業務</span>を<br>その場でAIに解かせる。</h1>
-    <p class="sub">事例紹介では、現場は動きません。講義と並行して、参加者がいま困っている業務をその場で聞き取り、生成AIで作って画面に出します。持ち帰るのは知識ではなく、月曜から使えるプロンプトと手順です。</p>
+    <h1>研修で終わらせない。<br><span class="hl">動くツール</span>が<br>1本、残る。</h1>
+    <p class="sub">講義のとなりで、参加者がいま困っている業務をその場でAIに実装して見せます。さらに当日出た題材から1本を、こちらが仕上げて納品。「勉強になった」ではなく「業務が1つ減った」で終わる研修です。</p>
 
     <div class="circles">
       <div class="circle"><span class="t">講義と実装の</span><span class="b">2名体制</span></div>
-      <div class="circle"><span class="t">参加者の業務を</span><span class="b">その場で<br>実装</span></div>
-      <div class="circle"><span class="t">1社貸切</span><span class="b"><em>20</em>万円</span></div>
+      <div class="circle"><span class="t">御社専用ツールを</span><span class="b"><em>1</em>本納品</span></div>
+      <div class="circle"><span class="t">1社貸切</span><span class="b"><em>50</em>万円</span></div>
     </div>
 
     <div class="tags">
-      <span class="lead">研修当日にできること</span>
-      <span class="tag">業務の切り出し</span>
-      <span class="tag">実装デモ2本</span>
-      <span class="tag">自分の業務でハンズオン</span>
-      <span class="tag">プロンプト集を納品</span>
+      <span class="lead">50万円に含まれるもの</span>
+      <span class="tag">事前ヒアリング60分</span>
+      <span class="tag">研修3時間</span>
+      <span class="tag">専用ツール1本の制作</span>
+      <span class="tag">30日間サポート</span>
     </div>
   </div>
 </section>
@@ -337,10 +361,10 @@ a{color:inherit;text-decoration:none}
 <div class="band">
   <div class="wrap">
     <dl class="nums">
-      <div class="num"><dt>所要時間</dt><dd>3<small>時間</small></dd></div>
-      <div class="num"><dt>推奨人数</dt><dd>5–20<small>名</small></dd></div>
-      <div class="num"><dt>1社貸切</dt><dd>20<small>万円/税別</small></dd></div>
-      <div class="num"><dt>最短実施</dt><dd>2<small>週間後</small></dd></div>
+      <div class="num"><dt>研修</dt><dd>3<small>時間</small></dd></div>
+      <div class="num"><dt>納品</dt><dd>1<small>ツール</small></dd></div>
+      <div class="num"><dt>1社貸切</dt><dd>50<small>万円/税別</small></dd></div>
+      <div class="num"><dt>研修後サポート</dt><dd>30<small>日間</small></dd></div>
     </dl>
   </div>
 </div>
@@ -377,7 +401,7 @@ a{color:inherit;text-decoration:none}
         <div class="vis-line"><b>動画・eラーニングを配布</b><span class="x">見て終わる</span></div>
         <div class="vis-line"><b>他社事例の紹介</b><span class="x">自社に戻せない</span></div>
         <div class="vis-line"><b>全員に同じ演習</b><span class="x">自分ごとにならない</span></div>
-        <div class="vis-line"><b>参加者の業務をその場で実装</b><span class="x ok">翌日から使える</span></div>
+        <div class="vis-line"><b>その場で実装し、1本は仕上げて納品</b><span class="x ok">業務が1つ減る</span></div>
         <p class="vis-cap">この研修は、いちばん下の1行だけをやります。</p>
       </div>
     </div>
@@ -428,7 +452,7 @@ a{color:inherit;text-decoration:none}
       <div class="tt-row is-break"><span class="tt-time">1:30</span><span class="tt-body"><b>休憩</b><span>10分</span></span></div>
       <div class="tt-row"><span class="tt-time">1:40</span><span class="tt-body"><b>ハンズオン：自分の業務で書く</b><span>詰まった方には個別に入ります</span></span></div>
       <div class="tt-row is-demo"><span class="tt-time">2:20</span><span class="tt-body"><b>2本目 ／ 質疑<span class="pill">実装デモ</span></b><span>ハンズオンで出た「できなかった」をその場で解く</span></span></div>
-      <div class="tt-row"><span class="tt-time">2:50</span><span class="tt-body"><b>持ち帰りシートと、社内展開の順番</b><span>来週やること・再来月やることを決めて終わる</span></span></div>
+      <div class="tt-row"><span class="tt-time">2:50</span><span class="tt-body"><b>納品するツールを1本決めて終わる</b><span>当日出た題材から1つ選定。以降はこちらが仕上げます</span></span></div>
     </div>
   </div>
 </section>
@@ -440,31 +464,42 @@ a{color:inherit;text-decoration:none}
     <div class="cmp-scroll">
       <table class="cmp">
         <thead>
-          <tr><th></th><th>一般的なAI研修</th><th class="mine">この研修</th></tr>
+          <tr><th></th><th>動画・eラーニング</th><th>一般的な集合研修</th><th class="mine">この研修</th></tr>
         </thead>
         <tbody>
           <tr>
             <th>題材</th>
+            <td><span class="mk no">×</span><small>汎用カリキュラム</small></td>
             <td><span class="mk no">×</span><small>他社事例・共通課題</small></td>
             <td class="mine"><span class="mk yes">◎</span><small>参加者が当日出す実務</small></td>
           </tr>
           <tr>
             <th>実演</th>
+            <td><span class="mk no">×</span><small>収録済みの画面</small></td>
             <td><span class="mk no">×</span><small>スライドの中だけ</small></td>
-            <td class="mine"><span class="mk yes">◎</span><small>画面共有でゼロから作る</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>その場でゼロから作る</small></td>
+          </tr>
+          <tr>
+            <th>終わったあとに<br>残るもの</th>
+            <td><span class="mk no">–</span><small>受講ログ</small></td>
+            <td><span class="mk no">–</span><small>資料PDF</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>動く専用ツール1本</small></td>
           </tr>
           <tr>
             <th>体制</th>
+            <td><span class="mk no">–</span><small>講師なし</small></td>
             <td><span class="mk no">–</span><small>講師1名</small></td>
             <td class="mine"><span class="mk yes">◎</span><small>講義＋実装の2名</small></td>
           </tr>
           <tr>
-            <th>持ち帰り</th>
-            <td><span class="mk no">–</span><small>資料PDF</small></td>
-            <td class="mine"><span class="mk yes">◎</span><small>当日の作成物・プロンプト集・録画</small></td>
+            <th>研修後</th>
+            <td><span class="mk no">–</span><small>見放題だが誰も見ない</small></td>
+            <td><span class="mk no">–</span><small>その場で終わり</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>30日間チャットで質問可</small></td>
           </tr>
           <tr>
-            <th>準備期間</th>
+            <th>導入までの期間</th>
+            <td><span class="mk no">–</span><small>契約・ID配布に数週間</small></td>
             <td><span class="mk no">–</span><small>1〜数か月</small></td>
             <td class="mine"><span class="mk yes">◎</span><small>最短2週間</small></td>
           </tr>
@@ -474,32 +509,69 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<section class="sec sec-grey" id="plan">
+<section class="sec sec-grey">
+  <div class="wrap">
+    <span class="eyebrow">DELIVERABLES</span>
+    <h2>50万円に<span class="u">含まれるもの</span></h2>
+    <p class="lede">研修3時間だけの費用ではありません。当日出た業務を、こちらが1本仕上げて納品するところまでが1セットです。</p>
+    <div class="deliv">
+      <div class="deliv-row">
+        <span class="deliv-n">1</span>
+        <span class="deliv-t"><b>事前ヒアリング</b><span>業務の棚卸しと、当日扱う題材の選定</span></span>
+        <span class="deliv-q">60分</span>
+      </div>
+      <div class="deliv-row">
+        <span class="deliv-n">2</span>
+        <span class="deliv-t"><b>研修当日</b><span>講義＋実装デモ2本＋自分の業務でハンズオン</span></span>
+        <span class="deliv-q">3時間</span>
+      </div>
+      <div class="deliv-row is-core">
+        <span class="deliv-n">3</span>
+        <span class="deliv-t"><b>御社専用ツールの制作・納品</b><span>当日出た業務から1つ選び、研修後2週間以内に仕上げてお渡しします</span></span>
+        <span class="deliv-q">1本</span>
+      </div>
+      <div class="deliv-row">
+        <span class="deliv-n">4</span>
+        <span class="deliv-t"><b>プロンプト集・当日の録画</b><span>その場で作ったものは、全部そのままお渡しします</span></span>
+        <span class="deliv-q">一式</span>
+      </div>
+      <div class="deliv-row">
+        <span class="deliv-n">5</span>
+        <span class="deliv-t"><b>研修後チャットサポート</b><span>現場で詰まったら、その場で聞ける期間をつけます</span></span>
+        <span class="deliv-q">30日間</span>
+      </div>
+    </div>
+    <p class="deliv-foot">研修を「受ける」のではなく、業務が1つ片づいた状態を受け取る。</p>
+  </div>
+</section>
+
+<section class="sec" id="plan">
   <div class="wrap">
     <span class="eyebrow">PRICE</span>
     <h2>2つの受け方</h2>
     <p class="lede">自社の業務を題材にするなら貸切、まず一人で試すなら公開講座を。</p>
     <div class="plans">
       <div class="plan is-lead">
-        <div class="plan-hd"><span class="k">PLAN A ／ 1社貸切</span><b>企業研修</b></div>
+        <div class="plan-hd"><span class="k">PLAN A ／ 1社貸切</span><b>企業研修＋ツール納品</b></div>
         <div class="plan-bd">
-          <div class="price"><span class="n">200,000</span><span class="u">円/税別</span></div>
-          <p class="price-note">1社あたり・3時間・人数によらず定額</p>
+          <div class="price"><span class="n">500,000</span><span class="u">円/税別</span></div>
+          <p class="price-note">1社あたり・人数によらず定額</p>
           <ul>
             <li><i>形式</i><span>オンライン／訪問（交通費実費）</span></li>
             <li><i>人数</i><span>5〜20名（超過は要相談）</span></li>
-            <li><i>事前</i><span>ヒアリング30分×1回・題材のすり合わせ</span></li>
-            <li><i>納品</i><span>当日の作成物・プロンプト集・録画</span></li>
+            <li><i>研修</i><span>3時間（実装デモ2本＋ハンズオン）</span></li>
+            <li><i>納品</i><span>御社専用ツール1本・プロンプト集・録画</span></li>
+            <li><i>サポート</i><span>研修後30日間のチャット質問</span></li>
             <li><i>支払</i><span>請求書払い（月末締め／翌月末）</span></li>
           </ul>
           <a class="btn btn-o" href="#contact">日程を相談する</a>
         </div>
       </div>
       <div class="plan">
-        <div class="plan-hd"><span class="k">PLAN B ／ 個人参加</span><b>公開講座</b></div>
+        <div class="plan-hd"><span class="k">PLAN B ／ 個人参加</span><b>公開講座（体験）</b></div>
         <div class="plan-bd">
           <div class="price"><span class="n">10,000</span><span class="u">円/税込</span></div>
-          <p class="price-note">お一人あたり・定員30名</p>
+          <p class="price-note">お一人あたり・定員30名・ツール納品なし</p>
           <ul>
             <li><i>形式</i><span>オンライン</span></li>
             <li><i>人数</i><span>定員30名</span></li>
@@ -514,7 +586,7 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<section class="sec">
+<section class="sec sec-grey">
   <div class="wrap">
     <span class="eyebrow">PREPARE</span>
     <h2>当日までに<span class="u">用意するもの</span></h2>
@@ -527,7 +599,7 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<section class="sec sec-grey">
+<section class="sec">
   <div class="wrap">
     <span class="eyebrow">SPEAKERS</span>
     <h2>登壇する二人</h2>
@@ -552,6 +624,14 @@ a{color:inherit;text-decoration:none}
     <h2>よくあるご質問</h2>
     <div class="faq">
       <details open>
+        <summary>50万円は、何に対する費用ですか。</summary>
+        <p class="a">研修3時間だけの費用ではありません。事前ヒアリング、当日の研修、そこで出た業務から1本を選んで作る<b>御社専用ツールの制作費</b>、研修後30日間のサポートまでを含みます。「学ぶ機会」ではなく「業務が1つ片づいた状態」に対する費用とお考えください。</p>
+      </details>
+      <details>
+        <summary>納品されるツールとは、具体的にどんなものですか。</summary>
+        <p class="a">当日の題材によります。たとえば「議事録から報告書の下書きを作る仕組み」「問い合わせメールの一次返信を用意する仕組み」「Excelの集計を毎回同じ手順で回す仕組み」など、現場の方がそのまま使える形でお渡しします。事前ヒアリングの時点で、作れる／作れないははっきりお伝えします。</p>
+      </details>
+      <details>
         <summary>社内にAIに詳しい人が一人もいませんが、大丈夫ですか。</summary>
         <p class="a">その前提で設計しています。用語の説明から始め、当日はアカウント作成の画面から一緒に進みます。詳しい方が混ざっている場合は、その方には別題材をお渡しします。</p>
       </details>
