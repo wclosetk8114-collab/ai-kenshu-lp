@@ -300,6 +300,49 @@ a{color:inherit;text-decoration:none}
   font-size:19px;font-weight:700;color:var(--orange);
 }
 
+/* ===== contact form ===== */
+.cf-wrap{
+  background:#fff;color:var(--text);border-radius:10px;
+  padding:26px 22px 24px;margin:0 auto;max-width:620px;text-align:left;
+  box-shadow:0 14px 40px rgba(0,0,0,.28);
+}
+.cf{display:grid;gap:14px}
+.cf-f{display:grid;gap:5px}
+.cf-f label{font-weight:700;font-size:13.5px;color:var(--navy)}
+.cf-f label .req{
+  font-size:10.5px;font-weight:700;color:#fff;background:var(--orange);
+  padding:1px 6px;border-radius:2px;margin-left:6px;vertical-align:1px;letter-spacing:.04em;
+}
+.cf-f label .opt{
+  font-size:10.5px;font-weight:700;color:var(--text-sub);background:var(--grey);
+  padding:1px 6px;border-radius:2px;margin-left:6px;vertical-align:1px;
+}
+.cf input,.cf select,.cf textarea{
+  font-family:var(--jp);font-size:15px;color:var(--text);
+  border:1px solid var(--grey-2);border-radius:5px;padding:11px 12px;
+  background:#fff;width:100%;line-height:1.6;
+}
+.cf textarea{resize:vertical;min-height:96px}
+.cf input:focus,.cf select:focus,.cf textarea:focus{
+  outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(18,58,107,.12);
+}
+.cf button{
+  font-family:var(--jp);font-weight:700;font-size:16px;color:#fff;
+  background:var(--orange);border:0;border-radius:5px;padding:15px;
+  cursor:pointer;margin-top:4px;transition:background .15s ease;
+}
+.cf button:hover{background:var(--orange-d)}
+.cf button:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.cf-note{
+  margin:14px 0 0;font-size:12.5px;line-height:1.8;color:var(--text-sub);text-align:left;
+}
+.cf-note a{color:var(--navy);font-weight:700;text-decoration:underline}
+.cf-alt{
+  margin:16px 0 0;padding-top:14px;border-top:1px solid var(--grey-2);
+  font-size:13px;color:var(--text-sub);text-align:center;
+}
+.cf-alt b{display:block;font-size:15px;color:var(--navy);word-break:break-all}
+
 /* ===== closing ===== */
 .close{background:linear-gradient(160deg,#16447C,var(--navy-d));color:#fff;padding:52px 0 56px;text-align:center}
 .close h2{color:#fff}
@@ -645,14 +688,77 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <h2>まず、御社の<br><span class="u">「面倒な業務」</span>を一つ聞かせてください。</h2>
     <p>30分の無料相談で、その業務が90日でAI化できるかをその場でお答えします。できない場合は、そう申し上げます。</p>
-    <div class="close-btns">
-      <a class="btn btn-o" href="#contact">無料相談を申し込む</a>
-      <a class="btn btn-w" href="#plan">料金をもう一度見る</a>
+
+    <div class="cf-wrap">
+      <form class="cf" id="contactForm" novalidate>
+        <div class="cf-f">
+          <label for="cf-company">会社名<span class="req">必須</span></label>
+          <input type="text" id="cf-company" name="company" required autocomplete="organization" placeholder="株式会社〇〇">
+        </div>
+        <div class="cf-f">
+          <label for="cf-name">お名前<span class="req">必須</span></label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="山田 太郎">
+        </div>
+        <div class="cf-f">
+          <label for="cf-email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="taro@example.co.jp">
+        </div>
+        <div class="cf-f">
+          <label for="cf-tel">お電話番号<span class="opt">任意</span></label>
+          <input type="tel" id="cf-tel" name="tel" autocomplete="tel" placeholder="03-0000-0000">
+        </div>
+        <div class="cf-f">
+          <label for="cf-plan">ご関心<span class="req">必須</span></label>
+          <select id="cf-plan" name="plan" required>
+            <option value="90日 伴走プログラム（月額15万円）">90日 伴走プログラム（月額15万円）</option>
+            <option value="公開講座（1万円）">公開講座（1万円）</option>
+            <option value="まだ決めていない・まず相談したい">まだ決めていない・まず相談したい</option>
+          </select>
+        </div>
+        <div class="cf-f">
+          <label for="cf-issue">いま面倒だと感じている業務<span class="req">必須</span></label>
+          <textarea id="cf-issue" name="issue" required placeholder="例）毎週の売上報告を手作業でExcelにまとめていて、2時間かかっている"></textarea>
+        </div>
+        <button type="submit">この内容で無料相談を申し込む</button>
+      </form>
+      <p class="cf-note">送信を押すと、内容が入ったメールソフトが立ち上がります。そのまま送信してください。2営業日以内にご返信します。</p>
+      <p class="cf-alt">うまく開かない場合は、こちらへ直接どうぞ<b><a href="mailto:w.closet.k8114@gmail.com?subject=%E3%80%90AI%E4%BC%B4%E8%B5%B0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%80%91%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%81%AE%E3%81%94%E4%BE%9D%E9%A0%BC">w.closet.k8114@gmail.com</a></b></p>
     </div>
   </div>
 </section>
 
-<p class="foot">その場で動かすAI研修 ／ 法人向けサービス</p>
+<script>
+(function(){
+  var f = document.getElementById('contactForm');
+  if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){ f.reportValidity(); return; }
+    var v = function(id){ return (document.getElementById(id).value || '').trim(); };
+    var body = [
+      '90日 伴走プログラムの無料相談を申し込みます。',
+      '',
+      '■会社名：' + v('cf-company'),
+      '■お名前：' + v('cf-name'),
+      '■メール：' + v('cf-email'),
+      '■電話：' + (v('cf-tel') || '（未記入）'),
+      '■ご関心：' + v('cf-plan'),
+      '',
+      '■いま面倒だと感じている業務',
+      v('cf-issue'),
+      '',
+      '---',
+      '送信元：' + location.href
+    ].join('\n');
+    var subject = '【AI伴走プログラム】無料相談のご依頼／' + v('cf-company');
+    location.href = 'mailto:w.closet.k8114@gmail.com'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+
+<p class="foot">90日でAIが回る会社に ／ 法人向けサービス<br>お問い合わせ：w.closet.k8114@gmail.com</p>
 
 <nav class="sticky">
   <a class="btn btn-w" href="#plan">料金を見る</a>
