@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="講義と実装デモの2名体制。参加者がいま困っている業務をその場でAIに実装し、動いたものをそのまま持ち帰る法人向けAI研修。3時間・1社20万円（税別）、研修後14日サポート付き。">
+<meta name="description" content="月2回のセッションとチャット無制限で90日伴走。御社の業務をAIに置き換え、動いている状態まで持っていく法人向けプログラム。月額10万円（税別）・最低3ヶ月。">
 <meta name="theme-color" content="#123A6B">
 <meta property="og:type" content="website">
-<meta property="og:title" content="その場で動かすAI研修｜法人向け">
-<meta property="og:description" content="研修で終わらせない。動くものがその日に残る。1社20万円（税別）／実装物の持ち帰り＋14日間サポート。">
+<meta property="og:title" content="90日でAIが回る会社に｜法人向け伴走プログラム">
+<meta property="og:description" content="90日で、AIで回る業務を社内に1つつくる。セッション月2回＋チャット無制限、月額10万円（税別）。">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23123A6B'/%3E%3Ctext x='32' y='45' font-size='34' font-family='sans-serif' font-weight='bold' fill='%23EE7B1E' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
 <style>html{color-scheme:light}img{max-width:100%}</style>
-<title>その場で動かすAI研修</title>
+<title>90日でAIが回る会社に</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Barlow+Condensed:wght@500;600;700&display=swap">
@@ -179,9 +179,9 @@ a{color:inherit;text-decoration:none}
 
 /* ===== timetable ===== */
 .tt{background:#fff;border:1px solid var(--grey-2);border-radius:8px;overflow:hidden}
-.tt-row{display:grid;grid-template-columns:82px minmax(0,1fr);gap:14px;padding:14px 16px;border-bottom:1px solid var(--grey-2);align-items:baseline}
+.tt-row{display:grid;grid-template-columns:78px minmax(0,1fr);gap:14px;padding:14px 16px;border-bottom:1px solid var(--grey-2);align-items:center}
 .tt-row:last-child{border-bottom:0}
-.tt-time{font-family:var(--num);font-weight:700;font-size:20px;color:var(--navy);font-variant-numeric:tabular-nums;letter-spacing:.03em}
+.tt-time{font-family:var(--num);font-weight:700;font-size:19px;line-height:1.15;color:var(--navy);font-variant-numeric:tabular-nums;letter-spacing:.03em}
 .tt-body b{display:block;font-weight:700;font-size:15.5px;line-height:1.6;margin-bottom:2px}
 .tt-body span{color:var(--text-sub);font-size:13.5px;line-height:1.75;display:block}
 .tt-row.is-demo{background:#FFF4E8}
@@ -321,7 +321,7 @@ a{color:inherit;text-decoration:none}
   .nums{grid-template-columns:1fr 1fr}
   .roles,.plans,.people,.close-btns{grid-template-columns:1fr}
   .prep{grid-template-columns:1fr}
-  .tt-row{grid-template-columns:66px minmax(0,1fr);gap:10px;padding:13px 12px}
+  .tt-row{grid-template-columns:70px minmax(0,1fr);gap:10px;padding:13px 12px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -330,7 +330,7 @@ a{color:inherit;text-decoration:none}
 <header class="hd">
   <div class="hd-in">
     <div class="logo">
-      <b>その場で動かすAI研修</b><span class="badge">実装デモ付き</span>
+      <b>90日でAIが回る会社に</b><span class="badge">90日伴走</span>
       <small>法人向けサービス</small>
     </div>
     <a class="hd-cta" href="#contact">無料相談</a>
@@ -339,21 +339,21 @@ a{color:inherit;text-decoration:none}
 
 <section class="hero">
   <div class="wrap hero-in">
-    <h1>研修で終わらせない。<br><span class="hl">動くもの</span>が<br>その日に残る。</h1>
-    <p class="sub">講義のとなりで、参加者がいま困っている業務をその場でAIに実装して見せます。持ち帰るのは資料ではなく、その日に動いたもの一式。「勉強になった」ではなく「明日から1つ楽になる」で終わる研修です。</p>
+    <h1>90日で、<span class="hl">AIで回る業務</span>を<br>社内に1つつくる。</h1>
+    <p class="sub">3時間の研修では現場は変わりません。月2回のセッションで御社の業務をAIに置き換えていき、90日後には「その仕事、いまAIがやってます」と言える状態にします。月額制なので、合わなければ止められます。</p>
 
     <div class="circles">
-      <div class="circle"><span class="t">講義と実装の</span><span class="b">2名体制</span></div>
-      <div class="circle"><span class="t">御社の業務を</span><span class="b">その場で<br>実装</span></div>
-      <div class="circle"><span class="t">1社貸切</span><span class="b"><em>20</em>万円</span></div>
+      <div class="circle"><span class="t">伴走期間</span><span class="b"><em>90</em>日</span></div>
+      <div class="circle"><span class="t">セッション</span><span class="b">月<em>2</em>回</span></div>
+      <div class="circle"><span class="t">料金</span><span class="b">月額<em>10</em>万</span></div>
     </div>
 
     <div class="tags">
-      <span class="lead">20万円に含まれるもの</span>
-      <span class="tag">事前ヒアリング30分</span>
-      <span class="tag">研修3時間</span>
-      <span class="tag">当日つくった実装物</span>
-      <span class="tag">14日間サポート</span>
+      <span class="lead">月額に含まれるもの</span>
+      <span class="tag">セッション月2回</span>
+      <span class="tag">一緒に実装する時間</span>
+      <span class="tag">チャット無制限</span>
+      <span class="tag">成果物の持ち帰り</span>
     </div>
   </div>
 </section>
@@ -361,10 +361,10 @@ a{color:inherit;text-decoration:none}
 <div class="band">
   <div class="wrap">
     <dl class="nums">
-      <div class="num"><dt>研修</dt><dd>3<small>時間</small></dd></div>
-      <div class="num"><dt>持ち帰り</dt><dd>1–2<small>実装物</small></dd></div>
-      <div class="num"><dt>1社貸切</dt><dd>20<small>万円/税別</small></dd></div>
-      <div class="num"><dt>研修後サポート</dt><dd>14<small>日間</small></dd></div>
+      <div class="num"><dt>伴走期間</dt><dd>90<small>日間</small></dd></div>
+      <div class="num"><dt>セッション</dt><dd>月2<small>回/90分</small></dd></div>
+      <div class="num"><dt>料金</dt><dd>10<small>万円/月・税別</small></dd></div>
+      <div class="num"><dt>最低契約</dt><dd>3<small>ヶ月</small></dd></div>
     </dl>
   </div>
 </div>
@@ -401,7 +401,7 @@ a{color:inherit;text-decoration:none}
         <div class="vis-line"><b>動画・eラーニングを配布</b><span class="x">見て終わる</span></div>
         <div class="vis-line"><b>他社事例の紹介</b><span class="x">自社に戻せない</span></div>
         <div class="vis-line"><b>全員に同じ演習</b><span class="x">自分ごとにならない</span></div>
-        <div class="vis-line"><b>参加者の業務をその場で実装</b><span class="x ok">その日から使える</span></div>
+        <div class="vis-line"><b>90日かけて業務を1つ置き換える</b><span class="x ok">仕事が実際に減る</span></div>
         <p class="vis-cap">この研修は、いちばん下の1行だけをやります。</p>
       </div>
     </div>
@@ -412,7 +412,7 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <span class="eyebrow">SOLUTION</span>
     <h2>話す人と、<span class="u">作る人</span>を分ける。</h2>
-    <p class="lede">2名体制だから、講義が止まらず、実装も雑になりません。</p>
+    <p class="lede">2名体制だから、講義が止まらず、実装も雑になりません。90日間、ずっとこの2人が見ます。</p>
     <div class="roles">
       <div class="role">
         <div class="role-hd"><span class="k">LECTURE</span><b>講義 — あい</b></div>
@@ -442,17 +442,16 @@ a{color:inherit;text-decoration:none}
 
 <section class="sec sec-grey">
   <div class="wrap">
-    <span class="eyebrow">TIMETABLE</span>
-    <h2>3時間の流れ</h2>
-    <p class="lede">実装デモを2回はさみます。ハンズオンは、デモを見たあとに自分の業務で。</p>
+    <span class="eyebrow">ROADMAP</span>
+    <h2>90日の<span class="u">進みかた</span></h2>
+    <p class="lede">3ヶ月を3つのフェーズに分けます。毎月、目に見える結果を1つ出します。</p>
     <div class="tt">
-      <div class="tt-row"><span class="tt-time">0:00</span><span class="tt-body"><b>いま何ができて、何ができないか</b><span>誇張も過小評価もなしで現在地をそろえる</span></span></div>
-      <div class="tt-row"><span class="tt-time">0:20</span><span class="tt-body"><b>自社の業務を「渡せる形」に割る</b><span>手元の業務を、指示できる単位まで分解する</span></span></div>
-      <div class="tt-row is-demo"><span class="tt-time">0:50</span><span class="tt-body"><b>参加者の業務を1本、その場で作る<span class="pill">実装デモ</span></b><span>題材を挙手で決め、ゼロから完成まで画面共有</span></span></div>
-      <div class="tt-row is-break"><span class="tt-time">1:30</span><span class="tt-body"><b>休憩</b><span>10分</span></span></div>
-      <div class="tt-row"><span class="tt-time">1:40</span><span class="tt-body"><b>ハンズオン：自分の業務で書く</b><span>詰まった方には個別に入ります</span></span></div>
-      <div class="tt-row is-demo"><span class="tt-time">2:20</span><span class="tt-body"><b>2本目 ／ 質疑<span class="pill">実装デモ</span></b><span>ハンズオンで出た「できなかった」をその場で解く</span></span></div>
-      <div class="tt-row"><span class="tt-time">2:50</span><span class="tt-body"><b>持ち帰るものの確認と、社内展開の順番</b><span>作ったものを配り、来週やること・再来月やることを決める</span></span></div>
+      <div class="tt-row"><span class="tt-time">Day<br>1–30</span><span class="tt-body"><b>見つける</b><span>現場の手作業を棚卸しし、AIに渡せる順に並べる。1本目の題材を決める</span></span></div>
+      <div class="tt-row is-demo"><span class="tt-time">Day<br>30</span><span class="tt-body"><b>1本目が動く<span class="pill">成果</span></b><span>一緒に作ったものが、その業務で実際に動き出す</span></span></div>
+      <div class="tt-row"><span class="tt-time">Day<br>31–60</span><span class="tt-body"><b>つくる</b><span>セッションで一緒に実装し、あいだの詰まりはチャットで解く</span></span></div>
+      <div class="tt-row is-demo"><span class="tt-time">Day<br>60</span><span class="tt-body"><b>現場が使い始める<span class="pill">成果</span></b><span>担当の方が毎日の仕事のなかで回せる状態にする</span></span></div>
+      <div class="tt-row"><span class="tt-time">Day<br>61–90</span><span class="tt-body"><b>まわす</b><span>詰まったら自分で直せるところまで。次にAI化する業務も決める</span></span></div>
+      <div class="tt-row is-demo"><span class="tt-time">Day<br>90</span><span class="tt-body"><b>引き継ぎ<span class="pill">成果</span></b><span>成果物・プロンプト・手順書を一式お渡しして、社内で回る形に</span></span></div>
     </div>
   </div>
 </section>
@@ -460,48 +459,42 @@ a{color:inherit;text-decoration:none}
 <section class="sec">
   <div class="wrap">
     <span class="eyebrow">COMPARE</span>
-    <h2>一般的なAI研修との<span class="u">ちがい</span></h2>
+    <h2>他のAI研修との<span class="u">ちがい</span></h2>
     <div class="cmp-scroll">
       <table class="cmp">
         <thead>
-          <tr><th></th><th>動画・eラーニング</th><th>一般的な集合研修</th><th class="mine">この研修</th></tr>
+          <tr><th></th><th>動画・eラーニング</th><th>単発の集合研修</th><th class="mine">この伴走プログラム</th></tr>
         </thead>
         <tbody>
+          <tr>
+            <th>関わり方</th>
+            <td><span class="mk no">×</span><small>ID配布のみ</small></td>
+            <td><span class="mk no">×</span><small>その日かぎり</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>90日の伴走</small></td>
+          </tr>
           <tr>
             <th>題材</th>
             <td><span class="mk no">×</span><small>汎用カリキュラム</small></td>
             <td><span class="mk no">×</span><small>他社事例・共通課題</small></td>
-            <td class="mine"><span class="mk yes">◎</span><small>参加者が当日出す実務</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>御社の実務そのもの</small></td>
           </tr>
           <tr>
-            <th>実演</th>
-            <td><span class="mk no">×</span><small>収録済みの画面</small></td>
-            <td><span class="mk no">×</span><small>スライドの中だけ</small></td>
-            <td class="mine"><span class="mk yes">◎</span><small>その場でゼロから作る</small></td>
+            <th>つまずいた<br>とき</th>
+            <td><span class="mk no">×</span><small>聞く相手がいない</small></td>
+            <td><span class="mk no">–</span><small>研修は終わっている</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>チャットで即相談</small></td>
           </tr>
           <tr>
-            <th>終わったあとに<br>残るもの</th>
+            <th>90日後に<br>残るもの</th>
             <td><span class="mk no">–</span><small>受講ログ</small></td>
             <td><span class="mk no">–</span><small>資料PDF</small></td>
-            <td class="mine"><span class="mk yes">◎</span><small>その日に動いた実装物一式</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>AIで回っている業務</small></td>
           </tr>
           <tr>
-            <th>体制</th>
-            <td><span class="mk no">–</span><small>講師なし</small></td>
-            <td><span class="mk no">–</span><small>講師1名</small></td>
-            <td class="mine"><span class="mk yes">◎</span><small>講義＋実装の2名</small></td>
-          </tr>
-          <tr>
-            <th>研修後</th>
-            <td><span class="mk no">–</span><small>見放題だが誰も見ない</small></td>
-            <td><span class="mk no">–</span><small>その場で終わり</small></td>
-            <td class="mine"><span class="mk yes">◎</span><small>14日間チャットで質問可</small></td>
-          </tr>
-          <tr>
-            <th>導入までの期間</th>
-            <td><span class="mk no">–</span><small>契約・ID配布に数週間</small></td>
-            <td><span class="mk no">–</span><small>1〜数か月</small></td>
-            <td class="mine"><span class="mk yes">◎</span><small>最短2週間</small></td>
+            <th>やめどき</th>
+            <td><span class="mk no">–</span><small>年間契約が多い</small></td>
+            <td><span class="mk no">–</span><small>一括払い</small></td>
+            <td class="mine"><span class="mk yes">◎</span><small>3ヶ月後は月単位</small></td>
           </tr>
         </tbody>
       </table>
@@ -511,71 +504,72 @@ a{color:inherit;text-decoration:none}
 
 <section class="sec sec-grey">
   <div class="wrap">
-    <span class="eyebrow">DELIVERABLES</span>
-    <h2>20万円に<span class="u">含まれるもの</span></h2>
-    <p class="lede">話を聞いて終わりではありません。当日その場で作ったものを、そのまま持ち帰っていただくところまでが1セットです。</p>
+    <span class="eyebrow">INCLUDED</span>
+    <h2>月額10万円に<span class="u">含まれるもの</span></h2>
+    <p class="lede">研修の時間を買うのではなく、90日間いつでも相談できる相手がいる状態を買っていただきます。</p>
     <div class="deliv">
       <div class="deliv-row">
         <span class="deliv-n">1</span>
-        <span class="deliv-t"><b>事前ヒアリング</b><span>業務の棚卸しと、当日扱う題材の選定</span></span>
-        <span class="deliv-q">30分</span>
-      </div>
-      <div class="deliv-row">
-        <span class="deliv-n">2</span>
-        <span class="deliv-t"><b>研修当日</b><span>講義＋実装デモ2本＋自分の業務でハンズオン</span></span>
-        <span class="deliv-q">3時間</span>
+        <span class="deliv-t"><b>セッション（講義＋その場で実装）</b><span>御社の業務を持ち込んでいただき、その場で形にしていきます</span></span>
+        <span class="deliv-q">月2回/90分</span>
       </div>
       <div class="deliv-row is-core">
+        <span class="deliv-n">2</span>
+        <span class="deliv-t"><b>実装の持ち帰り</b><span>作ったプロンプト・ツール・手順は、その都度そのままお渡しします</span></span>
+        <span class="deliv-q">都度</span>
+      </div>
+      <div class="deliv-row">
         <span class="deliv-n">3</span>
-        <span class="deliv-t"><b>当日つくった実装物</b><span>参加者の実務から1〜2本、その場でゼロから作ってそのままお渡しします</span></span>
-        <span class="deliv-q">1〜2本</span>
+        <span class="deliv-t"><b>チャットサポート</b><span>セッションの合間に詰まったら、その場で聞けます（平日24時間以内に返信）</span></span>
+        <span class="deliv-q">無制限</span>
       </div>
       <div class="deliv-row">
         <span class="deliv-n">4</span>
-        <span class="deliv-t"><b>プロンプト集・当日の録画</b><span>その場で作ったものは、全部そのままお渡しします</span></span>
-        <span class="deliv-q">一式</span>
+        <span class="deliv-t"><b>セッション録画</b><span>出られなかった方も、あとから同じ内容を見られます</span></span>
+        <span class="deliv-q">毎回</span>
       </div>
       <div class="deliv-row">
         <span class="deliv-n">5</span>
-        <span class="deliv-t"><b>研修後チャットサポート</b><span>現場で詰まったら、その場で聞ける期間をつけます</span></span>
-        <span class="deliv-q">14日間</span>
+        <span class="deliv-t"><b>ふりかえりと次の一手</b><span>何がどれだけ減ったかを整理して、次にAI化する業務を決めます</span></span>
+        <span class="deliv-q">月1回</span>
       </div>
     </div>
-    <p class="deliv-foot">研修を「受ける」のではなく、動くものを持って帰る。</p>
+    <p class="deliv-foot">研修を「受ける」のではなく、90日かけて業務を置き換える。</p>
   </div>
 </section>
 
 <section class="sec" id="plan">
   <div class="wrap">
     <span class="eyebrow">PRICE</span>
-    <h2>2つの受け方</h2>
-    <p class="lede">自社の業務を題材にするなら貸切、まず一人で試すなら公開講座を。</p>
+    <h2>料金</h2>
+    <p class="lede">社内で実際に動かすなら伴走プログラム。まず一人で見てみたい方は公開講座から。</p>
     <div class="plans">
       <div class="plan is-lead">
-        <div class="plan-hd"><span class="k">PLAN A ／ 1社貸切</span><b>企業研修</b></div>
+        <div class="plan-hd"><span class="k">PLAN A ／ 1社契約</span><b>90日 伴走プログラム</b></div>
         <div class="plan-bd">
-          <div class="price"><span class="n">200,000</span><span class="u">円/税別</span></div>
-          <p class="price-note">1社あたり・人数によらず定額</p>
+          <div class="price"><span class="n">100,000</span><span class="u">円/月・税別</span></div>
+          <p class="price-note">最低3ヶ月〜・人数によらず定額（3ヶ月で30万円）</p>
           <ul>
-            <li><i>形式</i><span>オンライン／訪問（交通費実費）</span></li>
+            <li><i>形式</i><span>オンライン／訪問も可（交通費実費）</span></li>
             <li><i>人数</i><span>5〜20名（超過は要相談）</span></li>
-            <li><i>研修</i><span>3時間（実装デモ2本＋ハンズオン）</span></li>
-            <li><i>納品</i><span>当日の実装物1〜2本・プロンプト集・録画</span></li>
-            <li><i>サポート</i><span>研修後14日間のチャット質問</span></li>
+            <li><i>回数</i><span>セッション月2回・各90分</span></li>
+            <li><i>サポート</i><span>チャット無制限（平日24時間以内に返信）</span></li>
+            <li><i>納品</i><span>作った実装物・プロンプト・手順書</span></li>
+            <li><i>継続</i><span>4ヶ月目以降は月単位。解約はいつでも</span></li>
             <li><i>支払</i><span>請求書払い（月末締め／翌月末）</span></li>
           </ul>
-          <a class="btn btn-o" href="#contact">日程を相談する</a>
+          <a class="btn btn-o" href="#contact">無料相談を申し込む</a>
         </div>
       </div>
       <div class="plan">
         <div class="plan-hd"><span class="k">PLAN B ／ 個人参加</span><b>公開講座（体験）</b></div>
         <div class="plan-bd">
           <div class="price"><span class="n">10,000</span><span class="u">円/税込</span></div>
-          <p class="price-note">お一人あたり・定員30名・サポートなし</p>
+          <p class="price-note">お一人あたり・3時間・単発</p>
           <ul>
             <li><i>形式</i><span>オンライン</span></li>
             <li><i>人数</i><span>定員30名</span></li>
-            <li><i>題材</i><span>参加者から当日募集</span></li>
+            <li><i>内容</i><span>講義＋実装デモ＋ハンズオン</span></li>
             <li><i>納品</i><span>プロンプト集・録画（2週間視聴）</span></li>
             <li><i>支払</i><span>事前決済</span></li>
           </ul>
@@ -589,8 +583,8 @@ a{color:inherit;text-decoration:none}
 <section class="sec sec-grey">
   <div class="wrap">
     <span class="eyebrow">PREPARE</span>
-    <h2>当日までに<span class="u">用意するもの</span></h2>
-    <p class="lede">3つだけ。インストール作業も事前学習もありません。</p>
+    <h2>はじめる前に<span class="u">用意するもの</span></h2>
+    <p class="lede">初回までに3つだけ。インストール作業も事前学習もありません。</p>
     <div class="prep">
       <div><span class="n">1</span><b>PC</b><span>視聴だけならスマホでも可。ハンズオンはPC推奨です。</span></div>
       <div><span class="n">2</span><b>ChatGPT または Claude の無料アカウント</b><span>有料プランは不要。無料枠の範囲で作り方を見せます。</span></div>
@@ -624,28 +618,24 @@ a{color:inherit;text-decoration:none}
     <h2>よくあるご質問</h2>
     <div class="faq">
       <details open>
-        <summary>20万円は、何に対する費用ですか。</summary>
-        <p class="a">講師料だけではありません。事前ヒアリング、研修3時間、その場で作った実装物一式、研修後14日間のサポートまでを含みます。人数によらず1社定額です。</p>
+        <summary>なぜ単発の研修ではなく、90日なのですか。</summary>
+        <p class="a">1日の研修で盛り上がっても、現場に戻ると元の手順に戻ります。実際に効くのは、詰まったときすぐ聞ける相手が数ヶ月いることです。90日あれば「1本つくる → 現場で使う → 自分で直せる」まで届きます。</p>
       </details>
       <details>
-        <summary>当日つくるものは、具体的にどんなものですか。</summary>
-        <p class="a">当日の題材によります。たとえば「議事録から報告書の下書きを作る手順」「問い合わせメールの一次返信を用意する手順」「Excelの集計を毎回同じやり方で回す手順」など、現場の方がそのまま使える形でお渡しします。事前ヒアリングの時点で、その場で作れる／作れないははっきりお伝えします。</p>
+        <summary>途中でやめられますか。</summary>
+        <p class="a">最初の3ヶ月（90日）だけお願いしています。1ヶ月では成果が出る前に終わってしまうためです。4ヶ月目以降は月単位で、解約はいつでも受け付けます。自動で年間契約になることはありません。</p>
       </details>
       <details>
         <summary>社内にAIに詳しい人が一人もいませんが、大丈夫ですか。</summary>
-        <p class="a">その前提で設計しています。用語の説明から始め、当日はアカウント作成の画面から一緒に進みます。詳しい方が混ざっている場合は、その方には別題材をお渡しします。</p>
+        <p class="a">その前提で設計しています。用語の説明から始め、初回はアカウント作成の画面から一緒に進みます。詳しい方がいる場合は、その方には別の題材をお渡しします。</p>
+      </details>
+      <details>
+        <summary>セッションには毎回同じ人が出る必要がありますか。</summary>
+        <p class="a">担当の方1〜2名が続けて出ていただけると進みが早いですが、回ごとに参加者が変わっても構いません。毎回録画をお渡しするので、出られなかった方もあとから追いつけます。</p>
       </details>
       <details>
         <summary>社内の情報をAIに入力しても問題ありませんか。</summary>
-        <p class="a">研修中は実データを使いません。業務の「構造」だけを扱い、数字や個人名はダミーに置き換えて進めます。社内ルールがある場合は、事前ヒアリングで内容を合わせます。</p>
-      </details>
-      <details>
-        <summary>オンラインでも、実装している手元は見えますか。</summary>
-        <p class="a">画面共有でそのまま映します。打ち間違いや、AIが的外れな答えを返したときの直し方まで見えるのが、この形式の要点です。録画もお渡しします。</p>
-      </details>
-      <details>
-        <summary>何名から依頼できますか。開催までどのくらいかかりますか。</summary>
-        <p class="a">5名から承ります。日程が合えば、ご相談から最短2週間で実施できます。事前ヒアリング30分を1回いただきます。</p>
+        <p class="a">セッション中は実データを使いません。業務の「構造」だけを扱い、数字や個人名はダミーに置き換えて進めます。社内ルールがある場合は、初回のヒアリングで内容を合わせます。</p>
       </details>
     </div>
   </div>
@@ -654,7 +644,7 @@ a{color:inherit;text-decoration:none}
 <section class="close" id="contact">
   <div class="wrap">
     <h2>まず、御社の<br><span class="u">「面倒な業務」</span>を一つ聞かせてください。</h2>
-    <p>30分の無料相談で、その業務がAIで解けるかどうかをその場でお答えします。解けない場合は、そう申し上げます。</p>
+    <p>30分の無料相談で、その業務が90日でAI化できるかをその場でお答えします。できない場合は、そう申し上げます。</p>
     <div class="close-btns">
       <a class="btn btn-o" href="#contact">無料相談を申し込む</a>
       <a class="btn btn-w" href="#plan">料金をもう一度見る</a>
